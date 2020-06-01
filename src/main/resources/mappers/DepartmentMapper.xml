@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.staff.repository.DepartmentMapper">
+
+<!--    添加人事变动 void insertPersonnel(Personnel personnel);-->
+    <insert id="insertPersonnel" parameterType="com.staff.entity.Personnel" useGeneratedKeys="true" keyProperty="id">
+        insert into personnel(person, `change`, description) value(#{person}, #{change}, #{description})
+    </insert>
+
+<!--    获取所有人事变动列表 List<Personnel> queryAllPersonnel();-->
+    <select id="queryAllPersonnel" resultType="com.staff.entity.Personnel">
+        select * from personnel
+    </select>
+
+<!--    获取所有人事变动类型 List<PersonnelChange> queryAllPersonnelChange();-->
+    <select id="queryAllPersonnelChange" resultType="com.staff.entity.PersonnelChange">
+        select * from personnel_change
+    </select>
+
+<!--    查询所所有受教育程度 List<EduLevel> queryAllEduLevel();-->
+    <select id="queryAllEduLevel" resultType="com.staff.entity.EduLevel">
+        select * from edu_level
+    </select>
+
+<!--    查询所有职务 List<Job> queryAllJob();-->
+    <select id="queryAllJob" resultType="com.staff.entity.Job">
+        select * from job
+    </select>
+
+<!--    查询所有部门 List<Department> queryAllDepartment();-->
+    <select id="queryAllDepartment" resultType="com.staff.entity.Department">
+        select * from department
+    </select>
+</mapper>

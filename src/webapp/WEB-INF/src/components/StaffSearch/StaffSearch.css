@@ -1,0 +1,33 @@
+.SearchArea{
+    position: fixed;
+    width: 85%;
+    left: 15%;
+    height: 60%;
+    top: 10%;
+}
+
+/* .ant-table-tbody{
+    position: relative;
+    overflow-y:scroll;
+}  */
+
+.ConditionArea .deleteButton{
+    position: fixed;
+    right: 2%;
+    top: 5%
+}
+
+
+.searchButtons{
+    position: fixed;
+    top: 3%;
+    width: 70%;
+    right: 10%;
+}
+
+.searchButtons .Sel{
+    position: relative;
+    display: inline-block;
+    width: 20%;
+}
+

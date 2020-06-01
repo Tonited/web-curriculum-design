@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.staff.repository.StaffMapper">
+
+<!--    根据ID查找员工 Person queryStaffById(String id);-->
+    <select id="queryStaffById" resultType="com.staff.entity.Person">
+        select * from person where id=#{id} limit 1
+    </select>
+
+<!--    添加员工 void insertStaff(Person staff);-->
+    <insert id="insertStaff" parameterType="com.staff.entity.Person" useGeneratedKeys="false">
+        insert into person values(#{id}, #{passwd}, #{name}, #{sex}, #{birthday}, #{department}, #{job}, #{eduLevel}, #{spciality}, #{address}, #{tel}, #{email}, #{state}, #{remark} )
+    </insert>
+
+<!--    删除员工 void deleteStaffById(String id);-->
+    <delete id="deleteStaffById">
+        delete from person where id=#{id} limit 1
+    </delete>
+
+<!--    修改员工信息 void updataStaff(Person staff);-->
+    <update id="updataStaff" parameterType="com.staff.entity.Person">
+        update person set passwd=#{passwd}, name=#{name}, sex=#{sex}, birthday=#{birthday}, department=#{department}, job=#{job}, edu_level=#{eduLevel}, spciality=#{spciality}, address=#{address}, tel=#{tel}, email=#{email}, state=#{state}, remark=#{remark}
+        where id=#{id}
+    </update>
+
+<!--    根据条件查找员工 List<Person> queryStaffByTag(String staffName, Integer eduLevelID, Integer jobID);-->
+<!--    属性都为null时表示返回所有员工-->
+    <select id="queryStaffByTag" resultType="com.staff.entity.Person">
+        select * from person
+        <if test="staffName != null or departmentID != null or jobID != null">
+            where
+        </if>
+        <if test="staffName != null">
+            name=#{staffName}
+            <if test="departmentID != null or jobID != null">
+                and
+            </if>
+        </if>
+        <if test="departmentID != null">
+            department=#{departmentID}
+            <if test="jobID != null">
+                and
+            </if>
+        </if>
+        <if test="jobID != null">
+            job=#{jobID}
+        </if>
+    </select>
+
+</mapper>

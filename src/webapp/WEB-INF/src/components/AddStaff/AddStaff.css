@@ -1,0 +1,27 @@
+.AddStaff{
+    position: fixed;
+    width: 60%;
+    right: 17%;
+    height: 60%;
+    top: 10%;
+}
+
+.AddStaff .Sel{
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 5%;
+}
+
+.commitArea{
+    position: relative;
+    margin-top: 3%;
+    width: 100%;
+    text-align: center;
+}
+
+.commitArea .warningText{
+    margin-bottom: 1.5%;
+    color: red;
+    font-size: 1.3em;
+}

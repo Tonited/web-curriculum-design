@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.staff">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- 引入数据库配置文件 -->
+    <context:property-placeholder location="classpath:dbconfig.properties"/>
+    <!-- Spring用来控制业务逻辑，数据源，事务控制，aop... -->
+    <bean id="dataSource"
+          class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="driverClass" value="${jdbc.driver}" />
+        <property name="user" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+    </bean>
+
+    <!-- 创建出sqlSessionFactoryBean对象 -->
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <!-- configLocation指定全局配置文件的位置 -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+        <!-- mapperLocations: 指定mapper文件的位置 -->
+        <property name="mapperLocations" value="classpath:mappers/*Mapper.xml"></property>
+    </bean>
+
+    <!-- 扫描所有的mapper接口的实现，让这些mapper能够自动注入
+        base-package:指定mapper接口的包名
+    -->
+    <mybatis-spring:scan base-package="com.staff.repository"/>
+
+</beans>
