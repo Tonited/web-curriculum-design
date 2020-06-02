@@ -1,41 +1,31 @@
 <template>
   <div class="hello">
     <img alt="Vue logo" src="../../assets/logo.png">
-    <h1>{{this.$store.getters.testtext}}</h1>
+    <!-- 用来获取store数据的测试 -->
+    <h1>{{this.$store.state.helloworlds.testtext}}</h1>
+
+    <!--  v-model的测试  -->
     <input v-model="testActionText"/>
+
+    <!--  这两行是Vuex的action测试  -->
     <button v-on:click="testStoreAction()">测试</button>
     <h2>{{testActionText}}</h2>
+
+    <!--  axios的测试  -->
+    <div v-for="dep in departments" :key="dep.id">
+      <div>ID:{{dep.id}}</div>
+      <div>部门名称：{{dep.name}}</div>
+    </div>
+    <button v-on:click="getAllDepartment()">测试Axios</button>
+
     <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
   </div>
 </template>
 
 <script>
+  import DepartmentModel from "../../../models/DepartmentModel";
+  import api from "../../api";
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -43,12 +33,28 @@ export default {
   },
   data(){
     return{
-      testActionText: 'test'
+      // v-module 和 Vuex的action 的测试数据
+      testActionText: 'test',
+      // axios的测试数据
+      departments: []
     }
   },
   methods:{
+    // Vuex的action测试
     testStoreAction(){
       this.$store.dispatch('helloworlds/changeTestText',this.testActionText);
+    },
+
+    // axios和api的测试
+    getAllDepartment(){
+      api.getAllDepartment().then(res=>{
+        console.log(res)
+        if(res != null){
+          res.data.forEach(dep=>{
+            this.departments.unshift(DepartmentModel.fromJS(dep))
+          })
+        }
+      })
     }
   }
 }

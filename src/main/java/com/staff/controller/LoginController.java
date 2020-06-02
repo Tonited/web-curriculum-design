@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+@CrossOrigin(value = "*")
 @RestController
 @RequestMapping("admin")
 public class LoginController {
