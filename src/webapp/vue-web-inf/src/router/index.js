@@ -3,9 +3,10 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-import Index from "@/layout/Index"
+import Index from "@/layout/Index";
 import HelloWorld from "@/components/HelloWorld/index";
-import Login from "@/layout/Login"
+import Login from "@/layout/Login";
+import Query from "@/components/Query/index";
 
 
 
@@ -24,19 +25,15 @@ export const constantRoutes = [
                 // 测试用路由，样例都在这
                 path: 'test',
                 component: HelloWorld
-            }, {
+            },
+            {
                 path: 'search',
-                component: HelloWorld,
-                children: [
-                    {
-                        path: 'update',
-                        component: HelloWorld
-                    }
-                ]
+                component: Query,
             }, {
-                path: 'personnel',
-                component: HelloWorld
-            },{
+                path:'personnel',
+                component:HelloWorld,
+            },
+            {
                 path: 'add',
                 component: HelloWorld
             },{

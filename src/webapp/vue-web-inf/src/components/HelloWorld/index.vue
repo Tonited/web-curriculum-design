@@ -21,9 +21,18 @@
     </div>
 
     <!-- element-ui测试   -->
-    <el-popconfirm
-            title="这是一段内容确定删除吗？"
-    >
+    <el-select v-model="value" placeholder="请选择">
+      <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+      </el-option>
+    </el-select>
+    <el-popconfirm  title="这是一段内容确定删除吗？">
+      <el-button slot="reference">Element删除按钮测试</el-button>
+    </el-popconfirm>
+    <el-popconfirm  title="这是一段内容确定删除吗？">
       <el-button slot="reference">Element删除按钮测试</el-button>
     </el-popconfirm>
 
@@ -45,8 +54,26 @@ export default {
       // v-module 和 Vuex的action 的测试数据
       testActionText: 'test',
       // axios的测试数据
-      departments: []
+      departments: [],
+      options: [{
+        value: '选项1',
+        label: '黄金糕'
+      }, {
+        value: '选项2',
+        label: '双皮奶'
+      }, {
+        value: '选项3',
+        label: '蚵仔煎'
+      }, {
+        value: '选项4',
+        label: '龙须面'
+      }, {
+        value: '选项5',
+        label: '北京烤鸭'
+      }],
+      value: ''
     }
+
   },
   methods:{
     // Vuex的action测试
