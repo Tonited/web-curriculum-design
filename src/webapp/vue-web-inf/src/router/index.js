@@ -3,14 +3,48 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-import HelloWorld from "../components/HelloWorld/index";
+import Index from "@/layout/Index"
+import HelloWorld from "@/components/HelloWorld/index";
+import Login from "@/layout/Login"
+
 
 
 export const constantRoutes = [
     {
-        path: '/',
-        component: HelloWorld
+      path:'/',
+      component: Login
     },
+    {
+        // 首页
+        path: '/index',
+        name: 'index',
+        component: Index,
+        children: [
+            {
+                // 测试用路由，样例都在这
+                path: 'test',
+                component: HelloWorld
+            }, {
+                path: 'search',
+                component: HelloWorld,
+                children: [
+                    {
+                        path: 'update',
+                        component: HelloWorld
+                    }
+                ]
+            }, {
+                path: 'personnel',
+                component: HelloWorld
+            },{
+                path: 'add',
+                component: HelloWorld
+            },{
+                path: 'logout',
+                component: HelloWorld
+            }
+        ]
+    }
 ]
 
 const createRouter = () => new VueRouter({
