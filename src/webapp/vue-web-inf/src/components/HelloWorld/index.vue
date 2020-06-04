@@ -24,7 +24,7 @@
       <el-button slot="reference">Element删除按钮测试</el-button>
     </el-popconfirm>
 
-    // ElementUI组件测试
+    <!-- ElementUI组件测试-->
     <Select/>
 
     <h1>{{ msg }}</h1>
