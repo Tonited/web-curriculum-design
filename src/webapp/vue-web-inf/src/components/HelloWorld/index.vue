@@ -20,16 +20,12 @@
       <button v-on:click="getAllDepartment()">测试Axios</button>
     </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     <!-- element-ui测试   -->
     <el-popconfirm  title="这是一段内容确定删除吗？">
       <el-button slot="reference">Element删除按钮测试</el-button>
     </el-popconfirm>
-=======
->>>>>>> ca1e6d86c0afcc1d091aa4b41f93c650e6167c73
-=======
->>>>>>> ca1e6d86c0afcc1d091aa4b41f93c650e6167c73
+
     <el-popconfirm  title="这是一段内容确定删除吗？">
       <el-button slot="reference">Element删除按钮测试</el-button>
     </el-popconfirm>
@@ -43,12 +39,10 @@
 
 <script>
   import DepartmentModel from "@/models/DepartmentModel";
-  import Select from "@/components/Select"
   import api from "@/api";
 
 export default {
   name: 'HelloWorld',
-  components: {Select},
   props: {
     msg: String
   },

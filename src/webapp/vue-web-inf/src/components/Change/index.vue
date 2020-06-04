@@ -2,8 +2,8 @@
     <div>
         <el-table
                 :data="tableData"
-                style="width: 100%"
-                :row-class-name="tableRowClassName">
+                stripe
+                style="width: 100%">
             <el-table-column
                     prop="date"
                     label="日期"
@@ -23,48 +23,32 @@
 </template>
 
 <script>
-
+    import api from "../../api";
+    import PersonnelChangeModel from "@/models/PersonnelChangeModel";
     export default {
         methods: {
-            tableRowClassName({ rowIndex}) {
-                if (rowIndex === 1) {
-                    return 'warning-row';
-                } else if (rowIndex === 3) {
-                    return 'success-row';
-                }
-                return '';
-            }
+            },
+        mounted(){
+                api.getPersonnelList().then(res => {
+                    if (res != null) {
+                        res.data.forEach(prd => {
+                            this.personnelchange.unshift(PersonnelChangeModel.fromJS(prd))
+                        })
+                    }
+                })
         },
-        data() {
-            return {
-                tableData: [{
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄',
-                }, {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-01',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄',
-                }, {
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }]
+            data() {
+                return {
+                    personnelchange:[],
+
+                    // tableData: [{
+                    //     ID:  personnelchange.id,
+                    //     description:  personnelchange.description
+                    // }],
+                }
             }
-        }
     }
 </script>
 
 <style scoped>
-    .el-table .warning-row {
-        background: oldlace;
-    }
-
-    .el-table .success-row {
-        background: #f0f9eb;
-    }
 </style>
