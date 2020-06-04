@@ -7,6 +7,7 @@ import Index from "@/layout/Index";
 import HelloWorld from "@/components/HelloWorld/index";
 import Login from "@/layout/Login";
 import Query from "@/components/Query/index";
+import Change from  "@/components/Change/index";
 
 
 
@@ -31,7 +32,7 @@ export const constantRoutes = [
                 component: Query,
             }, {
                 path:'personnel',
-                component:HelloWorld,
+                component:Change,
             },
             {
                 path: 'add',
