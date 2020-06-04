@@ -2,16 +2,16 @@ package com.staff.entity;
 
 public class Job {
 
-    private Integer code;
+    private Integer id;
 
     private String description;
 
-    public Integer getCode() {
-        return code;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCode(Integer code) {
-        this.code = code;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getDescription() {
@@ -25,7 +25,7 @@ public class Job {
     @Override
     public String toString() {
         return "Job{" +
-                "code=" + code +
+                "id=" + id +
                 ", description=" + description +
                 '}';
     }

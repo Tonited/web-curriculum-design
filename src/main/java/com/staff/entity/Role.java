@@ -2,7 +2,7 @@ package com.staff.entity;
 
 public class Role {
 
-    private String uuid;
+    private String id;
 
     private String username;
 
@@ -20,12 +20,12 @@ public class Role {
         this.trueName = trueName;
     }
 
-    public String getUuid() {
-        return uuid;
+    public String getId() {
+        return id;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -55,7 +55,7 @@ public class Role {
     @Override
     public String toString() {
         return "Role{" +
-                "uuid='" + uuid + '\'' +
+                "id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", status='" + status + '\'' +

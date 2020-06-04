@@ -2,24 +2,24 @@ package com.staff.entity;
 
 public class PersonnelChange {
 
-    private Integer code;
+    private Integer id;
 
     @Override
     public String toString() {
         return "PersonnelChange{" +
-                "code=" + code +
+                "id=" + id +
                 ", description='" + description + '\'' +
                 '}';
     }
 
     private String description;
 
-    public Integer getCode() {
-        return code;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCode(Integer code) {
-        this.code = code;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getDescription() {

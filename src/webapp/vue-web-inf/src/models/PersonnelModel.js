@@ -1,6 +1,5 @@
 
 class PersonnelModel {
-    store;
     id;
     person;
     change;
@@ -13,7 +12,7 @@ class PersonnelModel {
         this.description = description;
     }
 
-    static fromJS(sobject){
+    static fromJS(object){
         return new PersonnelModel(
             object.id,
             object.person,
