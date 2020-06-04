@@ -117,7 +117,7 @@ class UpdataStaff extends Component{
     returnJobOption(){
         const jobOption = [];
         this.props.departmentStore.job.map(item=>{
-            const newItem = <Option value={item.code}>{item.description}</Option>
+            const newItem = <Option value={item.id}>{item.description}</Option>
             jobOption.unshift(newItem)
         })
         return jobOption;
@@ -126,7 +126,7 @@ class UpdataStaff extends Component{
     returnEduOption(){
         const eduOption = [];
         this.props.departmentStore.edu.map(item=>{
-            const newItem = <Option value={item.code}>{item.description}</Option>
+            const newItem = <Option value={item.id}>{item.description}</Option>
             eduOption.unshift(newItem)
         })
         return eduOption;

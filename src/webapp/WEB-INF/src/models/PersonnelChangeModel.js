@@ -2,19 +2,19 @@ import { observable } from "mobx";
 
 class PersonnelChangeModel{
     store;
-    code;
+    id;
     @observable description;
 
-    constructor(store, code, description){
+    constructor(store, id, description){
         this.store = store;
-        this.code = code;
+        this.id = id;
         this.description = description;
     }
 
     static fromJS(store, object){
         return new PersonnelChangeModel(
             store, 
-            object.code,
+            object.id,
             object.description
         )
     }

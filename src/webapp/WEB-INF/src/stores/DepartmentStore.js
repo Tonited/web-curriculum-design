@@ -65,7 +65,7 @@ class DepartmentStore{
                 res.map(item => {
                     const newItem = PersonnelModel.fromJS(this,item);
                     this.pnalType.map(items=>{
-                        if(newItem.change === items.code){
+                        if(newItem.change === items.id){
                             newItem.change = items.description
                             this.pnalList.unshift(newItem);
                         }
