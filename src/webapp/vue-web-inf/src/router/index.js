@@ -6,9 +6,12 @@ Vue.use(VueRouter);
 import Index from "@/layout/Index";
 import HelloWorld from "@/components/HelloWorld/index";
 import Login from "@/layout/Login";
+<<<<<<< HEAD
 import Query from "@/components/Query/index";
 import Change from  "@/components/Change/index";
 
+=======
+>>>>>>> ca1e6d86c0afcc1d091aa4b41f93c650e6167c73
 
 
 export const constantRoutes = [
@@ -29,7 +32,7 @@ export const constantRoutes = [
             },
             {
                 path: 'search',
-                component: Query,
+                component: HelloWorld,
             }, {
                 path:'personnel',
                 component:Change,

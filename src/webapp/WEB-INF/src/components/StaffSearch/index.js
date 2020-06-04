@@ -86,11 +86,11 @@ class StaffSearch extends Component{
           })
           // 整理职务
           departmentStore.job.map(item=>{
-              if(newStaff.job === item.description) newStaff.job = item.code
+              if(newStaff.job === item.description) newStaff.job = item.id
           })
           // 整理教育水平
           departmentStore.edu.map(item=>{
-              if(newStaff.eduLevel === item.description) newStaff.eduLevel = item.code
+              if(newStaff.eduLevel === item.description) newStaff.eduLevel = item.id
           })
           this.props.staffStore.willChangeStaff = newStaff;
         }}><Link to="/staff/updata" >修改</Link></div>
@@ -228,7 +228,7 @@ class StaffSearch extends Component{
   returnJobOption(){
     const jobOption = [];
     this.props.departmentStore.job.map(item=>{
-      const newItem = <Option value={item.code}>{item.description}</Option>
+      const newItem = <Option value={item.id}>{item.description}</Option>
       jobOption.unshift(newItem)
     })
     return jobOption;

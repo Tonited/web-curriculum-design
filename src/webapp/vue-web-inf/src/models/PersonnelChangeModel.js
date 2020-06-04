@@ -1,18 +1,15 @@
-
 class PersonnelChangeModel{
-    store;
-    code;
+    id;
     description;
 
-    constructor(store, code, description){
-        this.store = store;
-        this.code = code;
+    constructor(id, description){
+        this.id = id;
         this.description = description;
     }
 
     static fromJS(object){
         return new PersonnelChangeModel(
-            object.code,
+            object.id,
             object.description
         )
     }

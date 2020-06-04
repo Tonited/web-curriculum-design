@@ -42,11 +42,11 @@ class StaffStore{
         })
         // 整理职务
         departmentStore.job.map(item=>{
-            if(newStaff.job === item.code) newStaff.job = item.description
+            if(newStaff.job === item.id) newStaff.job = item.description
         })
         // 整理教育水平
         departmentStore.edu.map(item=>{
-            if(newStaff.eduLevel === item.code) newStaff.eduLevel = item.description
+            if(newStaff.eduLevel === item.id) newStaff.eduLevel = item.description
         })
         return newStaff;
     }
@@ -71,11 +71,11 @@ class StaffStore{
                         })
                         // 整理职务
                         departmentStore.job.map(item=>{
-                            if(newStaff.job === item.code) newStaff.job = item.description
+                            if(newStaff.job === item.id) newStaff.job = item.description
                         })
                         // 整理教育水平
                         departmentStore.edu.map(item=>{
-                            if(newStaff.eduLevel === item.code) newStaff.eduLevel = item.description
+                            if(newStaff.eduLevel === item.id) newStaff.eduLevel = item.description
                         })
                         
                         this.staffList.unshift(newStaff);

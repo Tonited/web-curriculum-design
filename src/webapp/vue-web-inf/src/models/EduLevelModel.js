@@ -1,17 +1,17 @@
 
 
 class EduLevelModel {
-    code;
+    id;
     description;
 
-    constructor(code, description){
-        this.code = code;
+    constructor(id, description){
+        this.id = id;
         this.description = description;
     }
 
     static fromJS(object){
         return new EduLevelModel(
-            object.code,
+            object.id,
             object.description
         )
     }
