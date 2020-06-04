@@ -27,16 +27,20 @@
       <el-button slot="reference">Element删除按钮测试</el-button>
     </el-popconfirm>
 
+    <Select/>
+
     <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
   import DepartmentModel from "@/models/DepartmentModel";
+  import Select from "@/components/Select"
   import api from "@/api";
 
 export default {
   name: 'HelloWorld',
+  components: {Select},
   props: {
     msg: String
   },
