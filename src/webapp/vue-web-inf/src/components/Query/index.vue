@@ -13,7 +13,7 @@
                 clearable>
         </el-input>
         <span class="word">部门:</span>
-        <el-select v-model="value" placeholder="请选择">
+        <el-select v-model="value" placeholder="请选择" size="small">
             <el-option
                     v-for="item in cities"
                     :key="item.value"
