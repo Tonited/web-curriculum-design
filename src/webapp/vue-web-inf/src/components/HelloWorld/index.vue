@@ -20,6 +20,12 @@
       <button v-on:click="getAllDepartment()">测试Axios</button>
     </div>
 
+
+    <!-- element-ui测试   -->
+    <el-popconfirm  title="这是一段内容确定删除吗？">
+      <el-button slot="reference">Element删除按钮测试</el-button>
+    </el-popconfirm>
+
     <el-popconfirm  title="这是一段内容确定删除吗？">
       <el-button slot="reference">Element删除按钮测试</el-button>
     </el-popconfirm>
@@ -33,12 +39,10 @@
 
 <script>
   import DepartmentModel from "@/models/DepartmentModel";
-  import Select from "@/components/Select"
   import api from "@/api";
 
 export default {
   name: 'HelloWorld',
-  components: {Select},
   props: {
     msg: String
   },
@@ -56,7 +60,6 @@ export default {
     testStoreAction(){
       this.$store.dispatch('helloworlds/changeTestText',this.testActionText);
     },
-
     // axios和api的测试
     getAllDepartment(){
       api.getAllDepartment().then(res=>{

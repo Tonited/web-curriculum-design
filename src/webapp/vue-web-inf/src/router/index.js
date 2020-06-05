@@ -6,6 +6,9 @@ Vue.use(VueRouter);
 import Index from "@/layout/Index";
 import HelloWorld from "@/components/HelloWorld/index";
 import Login from "@/layout/Login";
+import Change from  "@/components/Change/index";
+import Query from "@/components/Query/index";
+import Add from "@//components/Add/index";
 import Personnal from "@/layout/Personnal";
 
 
@@ -30,7 +33,7 @@ export const constantRoutes = [
                 component: HelloWorld,
             }, {
                 path:'personnel',
-                component:Personnal,
+                component:HelloWorld,
             },
             {
                 path: 'add',
