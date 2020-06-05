@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `edu_level`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `edu_level` (
   `id` int(11) NOT NULL,
-  `description` varchar(20) DEFAULT NULL,
+  `description` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-05 17:38:22
+-- Dump completed on 2020-06-05 17:53:40

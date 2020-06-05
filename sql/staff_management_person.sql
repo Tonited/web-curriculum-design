@@ -23,20 +23,20 @@ DROP TABLE IF EXISTS `person`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `person` (
-  `id` varchar(45) NOT NULL,
-  `passwd` varchar(45) DEFAULT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `sex` varchar(10) DEFAULT NULL,
-  `birthday` varchar(20) DEFAULT NULL,
+  `id` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `passwd` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `sex` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `birthday` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `department` int(11) NOT NULL DEFAULT '-1',
   `job` int(11) NOT NULL DEFAULT '-1',
   `edu_level` int(11) NOT NULL DEFAULT '-1',
-  `spciality` varchar(45) DEFAULT NULL,
-  `address` varchar(45) DEFAULT NULL,
-  `tel` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `state` varchar(45) DEFAULT NULL,
-  `remark` varchar(45) DEFAULT NULL,
+  `spciality` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `tel` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `email` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `state` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `remark` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `job_idx` (`job`),
   KEY `foregin_edulv_idx` (`edu_level`),
@@ -44,7 +44,7 @@ CREATE TABLE `person` (
   CONSTRAINT `fk_department` FOREIGN KEY (`department`) REFERENCES `department` (`id`),
   CONSTRAINT `fk_edulv` FOREIGN KEY (`edu_level`) REFERENCES `edu_level` (`id`),
   CONSTRAINT `fk_job` FOREIGN KEY (`job`) REFERENCES `job` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,4 +66,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-05 17:38:20
+-- Dump completed on 2020-06-05 17:53:38
