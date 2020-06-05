@@ -33,6 +33,11 @@
             data() {
                 return {
                     personnelchange:[],
+
+                    // tableData: [{
+                    //     ID:  personnelchange.id,
+                    //     description:  personnelchange.description
+                    // }],
                 }
             }
     }
