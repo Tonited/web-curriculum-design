@@ -9,6 +9,7 @@ import Login from "@/layout/Login";
 import Change from  "@/components/Change/index";
 import Query from "@/components/Query/index";
 import Add from "@//components/Add/index";
+// import Personnal from "@/layout/Personnal";
 
 
 export const constantRoutes = [
@@ -36,7 +37,7 @@ export const constantRoutes = [
             },
             {
                 path: 'add',
-                component: Add,
+                component: Add
             },{
                 path: 'logout',
                 component: HelloWorld

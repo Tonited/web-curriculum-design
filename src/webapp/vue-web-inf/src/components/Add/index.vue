@@ -129,6 +129,9 @@
         margin-left: 10%;
         margin-top: 10%;
     }
+    .span{
+
+    }
     .left{
         margin-left: 10%;
         margin-right: 20%;
