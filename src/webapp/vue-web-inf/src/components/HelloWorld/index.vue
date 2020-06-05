@@ -20,15 +20,11 @@
       <button v-on:click="getAllDepartment()">测试Axios</button>
     </div>
 
-
     <!-- element-ui测试   -->
     <el-popconfirm  title="这是一段内容确定删除吗？">
       <el-button slot="reference">Element删除按钮测试</el-button>
     </el-popconfirm>
 
-    <el-popconfirm  title="这是一段内容确定删除吗？">
-      <el-button slot="reference">Element删除按钮测试</el-button>
-    </el-popconfirm>
 
     <!-- ElementUI组件测试-->
     <Select/>
@@ -40,11 +36,15 @@
 <script>
   import DepartmentModel from "@/models/DepartmentModel";
   import api from "@/api";
+  import Select from '@/components/Select';
 
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components:{
+    Select
   },
   data(){
     return{
@@ -52,6 +52,7 @@ export default {
       testActionText: 'test',
       // axios的测试数据
       departments: [],
+
     }
 
   },
@@ -77,20 +78,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 
 .logos {
   font-family: Avenir, Helvetica, Arial, sans-serif;

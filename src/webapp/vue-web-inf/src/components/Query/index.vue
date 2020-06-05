@@ -176,7 +176,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .el-input{
         width: 15%;
     }

@@ -1,22 +1,15 @@
 <template>
     <div>
         <el-table
-                :data="tableData"
-                stripe
-                style="width: 100%">
+                :data="personnelchange"
+                stripe>
             <el-table-column
-                    prop="date"
-                    label="日期"
-                    width="180">
+                    prop="id"
+                    label="序号">
             </el-table-column>
             <el-table-column
-                    prop="name"
-                    label="姓名"
-                    width="180">
-            </el-table-column>
-            <el-table-column
-                    prop="address"
-                    label="地址">
+                    prop="description"
+                    label="描述">
             </el-table-column>
         </el-table>
     </div>
@@ -40,11 +33,6 @@
             data() {
                 return {
                     personnelchange:[],
-
-                    // tableData: [{
-                    //     ID:  personnelchange.id,
-                    //     description:  personnelchange.description
-                    // }],
                 }
             }
     }
