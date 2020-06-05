@@ -2,17 +2,14 @@
     <div>
         <el-table
                 :data="personnelchange"
-                stripe
-                style="width: 100%">
+                stripe>
             <el-table-column
                     prop="id"
-                    label="序号"
-                    width="350">
+                    label="序号">
             </el-table-column>
             <el-table-column
                     prop="description"
-                    label="描述"
-                    width="180">
+                    label="描述">
             </el-table-column>
         </el-table>
     </div>
