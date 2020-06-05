@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.staff.repository.LoginMapper">
+
+    <!--Boolean login(Role role);-->
+    <select id="login" parameterType="com.staff.entity.Role" resultType="java.lang.Boolean">
+        select count(username) from role where username = #{username} and password = #{password} and status= #{status} limit 1
+    </select>
+
+    <select id="isExist" parameterType="java.lang.String" resultType="java.lang.Boolean">
+        select count(username) from role where username = #{username} limit 1
+    </select>
+
+    <insert id="insert" parameterType="com.staff.entity.Role" useGeneratedKeys="false">
+        insert into role VALUES(#{uuid}, #{username}, #{password}, #{status}, #{trueName})
+    </insert>
+
+</mapper>

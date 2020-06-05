@@ -1,5 +1,10 @@
 <template>
-    <router-link to="/index">点击就进入了，之后我在完善登陆界面</router-link>
+    <div>
+        <div class="block">
+
+        </div>
+        <router-link to="/index">点击就进入了，之后我在完善登陆界面</router-link>
+    </div>
 </template>
 
 <script>
