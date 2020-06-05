@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 import Index from "@/layout/Index";
 import HelloWorld from "@/components/HelloWorld/index";
 import Login from "@/layout/Login";
+import Personnal from "@/layout/Personnal";
 
 
 export const constantRoutes = [
@@ -29,7 +30,7 @@ export const constantRoutes = [
                 component: HelloWorld,
             }, {
                 path:'personnel',
-                component:HelloWorld,
+                component:Personnal,
             },
             {
                 path: 'add',
