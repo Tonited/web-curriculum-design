@@ -1,34 +1,33 @@
 <template>
-    <div class="all">
-        <div class="left">
-            <span class="word">姓名:</span>
+    <el-row :gutter="20">
+        <el-col :span="8" :offset="8" style="text-align: center">
+            <h1>添加员工</h1>
+        </el-col>
+        <el-col :span="8" :offset="8" class="mar">
             <el-input
-                    placeholder="请输入内容"
+                    placeholder="姓名"
                     v-model="name"
                     clearable>
             </el-input>
-        </div>
-        <div class="right">
-            <span class="word">性别:</span>
+        </el-col>
+        <el-col :span="8" :offset="8" class="mar">
             <el-input
-                    placeholder="请输入内容"
+                    placeholder="性别"
                     v-model="sex"
                     clearable>
             </el-input>
-        </div>
-        <div class="left">
-            <span class="word">生日:</span>
+        </el-col>
+        <el-col :span="8" :offset="8" class="mar">
             <el-input
-                    placeholder="请输入内容"
+                    placeholder="生日"
                     v-model="bir"
                     clearable>
             </el-input>
-        </div>
-        <div class="right">
-            <span class="word">部门:</span>
+        </el-col>
+        <el-col :span="8" :offset="8" class="mar">
 <!--            下拉框均为可去除-->
             <template>
-                <el-select v-model="dep" clearable placeholder="请选择">
+                <el-select v-model="dep" clearable placeholder="部门" style="width:100%">
                     <el-option
                             v-for="item in department"
                             :key="item.value"
@@ -37,11 +36,10 @@
                     </el-option>
                 </el-select>
             </template>
-        </div>
-        <div class="left">
-            <span class="word">学历:</span>
+        </el-col>
+        <el-col :span="8" :offset="8" class="mar">
             <template>
-                <el-select v-model="edu" clearable placeholder="请选择">
+                <el-select v-model="edu" clearable placeholder="学历" style="width:100%">
                     <el-option
                             v-for="item in eduLevel"
                             :key="item.value"
@@ -50,38 +48,35 @@
                     </el-option>
                 </el-select>
             </template>
-        </div>
-        <div class="right">
-            <span class="word">职位:</span>
-            <template>
-                <el-select v-model="jobs" clearable placeholder="请选择">
-                    <el-option
-                            v-for="item in job"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
-                    </el-option>
-                </el-select>
-            </template>
-        </div>
-        <div class="left">
-            <span class="word">电话:</span>
+        </el-col>
+        <el-col :span="8" :offset="8" class="mar">
+            <el-select v-model="jobs" clearable placeholder="职位" style="width:100%">
+                <el-option
+                        v-for="item in job"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                </el-option>
+            </el-select>
+        </el-col>
+        <el-col :span="8" :offset="8" class="mar">
             <el-input
-                    placeholder="请输入内容"
+                    placeholder="电话"
                     v-model="tlt"
                     clearable>
             </el-input>
-        </div>
-        <div class="right">
-            <span class="word">邮箱:</span>
+        </el-col>
+        <el-col class="mar" :span="8"  :offset="8">
             <el-input
-                    placeholder="请输入内容"
+                    placeholder="邮箱"
                     v-model="email"
                     clearable>
             </el-input>
-        </div>
-        <el-button type="primary" plain v-on:click="addStaff">添加</el-button>
-    </div>
+        </el-col>
+        <el-col class="mar" :span="8"  :offset="8" style="text-align: center">
+            <el-button type="primary" plain v-on:click="addStaff">添加</el-button>
+        </el-col>
+    </el-row>
 </template>
 
 <script>
@@ -231,32 +226,7 @@
 </script>
 
 <style scoped>
-    .all{
-        height: auto;
-        width: 70%;
-        margin-left: 10%;
-        margin-top: 10%;
-    }
-    .word{
-        font-size: 15px;
-        font-weight: bold;
-        margin-right: 4px;
-    }
-    .left{
-        margin-left: 10%;
-        margin-right: 20%;
-        margin-bottom: 25px;
-        display: inline-block;
-    }
-    .right{
-        margin-bottom: 25px;
-        display: inline-block;
-    }
-    .el-input{
-        width: 85%;
-    }
-    .el-button{
-        margin-top: 80px;
-        margin-left: 45%;
+    .mar{
+        margin-top: 20px;
     }
 </style>
