@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const path = 'http://localhost:8771/admin';
+const path = 'http://282472j9i9.imdo.co/admin';
 const axiosRequest = axios
 
 const api = {
