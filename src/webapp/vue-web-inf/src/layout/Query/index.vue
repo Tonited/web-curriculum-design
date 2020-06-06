@@ -79,6 +79,13 @@
                         <el-button
                                 @click.native.prevent="deleteRow(scope.$index, name)"
                                 type="text"
+                                size="small"
+                        >
+                            修改
+                        </el-button>
+                        <el-button
+                                @click.native.prevent="deleteRow(scope.$index, name)"
+                                type="text"
                                 size="small">
                             移除
                         </el-button>

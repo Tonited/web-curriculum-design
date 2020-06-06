@@ -16,7 +16,7 @@
         components: {
             SideBar
         },
-        mounted() {
+        beforeMount() {
             this.$store.dispatch('transform/getAllDepartment');
         }
     }
