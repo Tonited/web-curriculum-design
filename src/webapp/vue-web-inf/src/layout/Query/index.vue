@@ -77,14 +77,14 @@
                 >
                     <template slot-scope="scope">
                         <el-button
-                                @click.native.prevent="deleteRow(scope.$index, name)"
+                                @click.native.prevent="editRow(scope.row)"
                                 type="text"
                                 size="small"
                         >
-                            修改
+                            添加
                         </el-button>
                         <el-button
-                                @click.native.prevent="deleteRow(scope.$index, name)"
+                                @click.native.prevent="deleteRow(scope.row)"
                                 type="text"
                                 size="small">
                             移除
@@ -107,8 +107,13 @@
             }
         },
         methods: {
-            deleteRow(index, rows) {
-                rows.splice(index, 1);
+            deleteRow(inf) {
+                // rows.splice(index, 1);
+                console.log(inf)
+                this.$store.dispatch('transform/deleteStaff',inf.id)
+            },
+            editRow(inf) {
+                console.log(inf)
             },
             search(){
                 this.$store.dispatch('transform/getStaff',[this.name,this.nowDep,this.nowJob])

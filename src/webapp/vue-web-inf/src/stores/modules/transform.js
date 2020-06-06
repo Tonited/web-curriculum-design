@@ -69,6 +69,22 @@ const mutations = {
             })
             return 0;
         })
+    },
+
+    DELETE_STAFF:(state, staffID)=> {
+        state.staff.map((staff,index)=>{
+            if(staff.id === staffID){
+                state.staff.splice(index,1);
+                return 0;
+            }
+        })
+        state.showStaff.map((staff,index)=>{
+            if(staff.id === staffID){
+                state.showStaff.splice(index,1);
+                return 0;
+            }
+        })
+        api.deleteStaff(staffID);
     }
 
 }
@@ -80,6 +96,10 @@ const actions = {
     //staffName,departmentID,jobID
     getStaff({commit},inf){
         commit('GET_STAFF',inf)
+    },
+
+    deleteStaff({commit},staffID){
+        commit('DELETE_STAFF',staffID)
     }
 }
 
