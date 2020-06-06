@@ -80,7 +80,7 @@
                     clearable>
             </el-input>
         </div>
-        <el-button type="primary" plain v-on:click="addStaff()">添加</el-button>
+        <el-button type="primary" plain v-on:click="addStaff">添加</el-button>
     </div>
 </template>
 
@@ -94,12 +94,24 @@
 
     export default {
         methods:{
-            addStaff(staff){
+            addStaff(){
+                const staff = PersonModel.fromJS({
+                    id:null,
+                    name: this.name,
+                    sex: this.sex,
+                    birthday:this.bir,
+                    department:this.dep,
+                    job:this.jobs,
+                    eduLevel:this.edu,
+                    tel:this.tlt,
+                    email:this.email,
+                });
                 api.addStaff(staff).then(res=>{
-                    if(res === true){
+                    if(res.data === true){
                         window.alert("添加员工成功");
-                    }
+                    }else {
                         window.alert("添加员工失败");
+                    }
                 })
             },
         },
@@ -107,7 +119,6 @@
         //     api.getAllEduLv().then(res => {
         //         if (res != null) {
         //             console.log(res)
-        //
         //             res.data.forEach(prd => {
         //                 this.eduLevel.unshift(EduLevelModel.fromJS(prd))
         //             })
@@ -125,7 +136,7 @@
         //         if (res != null) {
         //             console.log(res)
         //             res.data.forEach(prd => {
-        //                 this.department.unshift(DepartmentModel.fromJS(prd))
+        //                 this.department.unshift(DepartmentModel.fromJS(prd)),
         //             })
         //         }
         //     })
@@ -135,22 +146,8 @@
                 dep: '',
                 edu: '',
                 jobs: '',
-                staff : new PersonModel({
-                    id :'0',
-                    passwd : '123456',
-                    name: this.name,
-                    sex: this.sex,
-                    birthday:this.bir,
-                    department:this.department,
-                    job:this.job,
-                    eduLevel:this.eduLevel,
-                    spciality:'',
-                    address:'',
-                    tel:this.tlt,
-                    email:this.email,
-                    state:'',
-                    remark:'',
-                }),
+
+
                     name: '',
                     sex: '',
                     email: '',
