@@ -15,6 +15,9 @@
         name: "Index",
         components: {
             SideBar
+        },
+        mounted() {
+            this.$store.dispatch('transform/getAllDepartment');
         }
     }
 </script>

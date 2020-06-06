@@ -9,9 +9,9 @@ import "antd/es/input/style";
 import "antd/es/button/style";
 import { Redirect } from "react-router-dom";
 
+@observer
 @inject("loginStore")
 @inject("departmentStore")
-@observer
 class NormalLoginForm extends Component{
     constructor(props){
         super(props);

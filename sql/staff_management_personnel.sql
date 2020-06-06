@@ -24,13 +24,13 @@ DROP TABLE IF EXISTS `personnel`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `personnel` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `person` varchar(45) NOT NULL,
+  `person` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `change` int(11) NOT NULL,
-  `description` varchar(45) DEFAULT NULL,
+  `description` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_change_idx` (`change`),
   CONSTRAINT `fk_change` FOREIGN KEY (`change`) REFERENCES `personnel_change` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-05 17:38:21
+-- Dump completed on 2020-06-05 17:53:39

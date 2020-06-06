@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {BrowserRouter, Route } from "react-router-dom";
+import {BrowserRouter, Redirect, Route} from "react-router-dom";
 import SideBar from "../Sidebar";
 import Login from "../Login";
 import StaffSearch from '../StaffSearch'
@@ -12,6 +12,7 @@ class App extends Component{
         return(
             <BrowserRouter>
                 <div>
+                    <Redirect to="/login"/>
                     <Route exact path="/login" component={Login} />
                     <Route path="/staff" component={SideBar}/>
                     <Route exact path="/staff/search" component={StaffSearch} />

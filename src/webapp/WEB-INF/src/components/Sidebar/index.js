@@ -7,8 +7,8 @@ import "./SideBar.css";
 import { inject, observer} from 'mobx-react';
 import { Redirect, Link } from 'react-router-dom';
 
-@inject("loginStore")
 @observer
+@inject("loginStore")
 class SideBar extends Component {
     constructor(props){
         super(props);

@@ -24,13 +24,13 @@ DROP TABLE IF EXISTS `department`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `department` (
   `id` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  `manager` varchar(45) DEFAULT NULL,
-  `intro` varchar(200) DEFAULT NULL,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `manager` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `intro` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_manager_idx` (`manager`),
   CONSTRAINT `fk_manager` FOREIGN KEY (`manager`) REFERENCES `person` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-05 17:38:21
+-- Dump completed on 2020-06-05 17:53:39

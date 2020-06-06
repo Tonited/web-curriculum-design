@@ -7,7 +7,7 @@ import Index from "@/layout/Index";
 import HelloWorld from "@/components/HelloWorld/index";
 import Login from "@/layout/Login";
 import Change from  "@/components/Change/index";
-import Query from "@/components/Query/index";
+import Query from "@/layout/Query/index";
 import Add from "@//components/Add/index";
 // import Personnal from "@/layout/Personnal";
 

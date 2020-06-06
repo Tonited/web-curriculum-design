@@ -2,6 +2,7 @@
     <div>
         <el-table
                 :data="personnelchange"
+                max-height="600"
                 stripe>
             <el-table-column
                     prop="id"

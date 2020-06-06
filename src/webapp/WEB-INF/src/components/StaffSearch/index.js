@@ -13,11 +13,10 @@ const { Option } = Select;
 const { Search } = Input;
 
 
-
+@observer
 @inject("loginStore")
 @inject("staffStore")
 @inject("departmentStore")
-@observer
 class StaffSearch extends Component{
 
   columns = [

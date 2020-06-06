@@ -24,9 +24,11 @@ class DepartmentStore{
     getAllNeed(){
         this.departmentApi.getAllEduLv().then(
             action(res=>{
+                console.log(res)
                 res.map(item=>{
                     const newItem = EduLevelModel.fromJS(this, item);
                     this.edu.unshift(newItem);
+                    return 0;
                 })
             }
         ));
@@ -35,6 +37,7 @@ class DepartmentStore{
                 res.map(item=>{
                     const newItem = JobModel.fromJS(this, item);
                     this.job.unshift(newItem);
+                    return 0;
                 })
             }
         ));
@@ -43,6 +46,7 @@ class DepartmentStore{
                 res.map(item=>{
                     const newItem = PersonnelChangeModel.fromJS(this, item);
                     this.pnalType.unshift(newItem);
+                    return 0;
                 })
             }
         ));
@@ -51,6 +55,7 @@ class DepartmentStore{
                 res.map(item=>{
                     const newItem = DepartmentModel.fromJS(this, item);
                     this.dep.unshift(newItem);
+                    return 0;
                 })
             }
         ));
@@ -70,6 +75,7 @@ class DepartmentStore{
                             this.pnalList.unshift(newItem);
                         }
                     })
+                    return 0;
                 })
             })
         )

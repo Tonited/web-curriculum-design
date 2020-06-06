@@ -11,9 +11,9 @@ import { Redirect } from "react-router-dom";
 const InputGroup = Input.Group;
 const { Option } = Select;
 
+@observer
 @inject("staffStore")
 @inject("departmentStore")
-@observer
 class UpdataStaff extends Component{
     constructor(props){
         super(props)

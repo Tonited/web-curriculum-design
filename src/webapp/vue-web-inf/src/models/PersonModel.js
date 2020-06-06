@@ -32,7 +32,7 @@ class PersonModel {
         this.remark = remark;
     }
 
-    static fromJS(store, object){
+    static fromJS(object){
         return new PersonModel(
             object.id,
             object.passwd,
