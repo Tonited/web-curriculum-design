@@ -86,10 +86,6 @@
 
 <script>
      import api from "@/api";
-    // import EduLevelModel from "@/models/EduLevelModel";
-    // import JobModel from "@/models/JobModel";
-    // import DepartmentModel from "@/models/DepartmentModel";
-    // import api from "../../api"
      import  PersonModel from  "@/models/PersonModel"
 
     export default {
