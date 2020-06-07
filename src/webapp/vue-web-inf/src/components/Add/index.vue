@@ -100,7 +100,7 @@
                             message: '添加员工成功',
                             type: 'success'
                         });
-                        this.$router.push('index/search')
+                        this.$router.push('/index/search')
                     }else {
                         this.$message.error('添加员工失败');
                     }
