@@ -23,8 +23,6 @@
         mounted(){
                 api.getPersonnelList().then(res => {
                     if (res != null) {
-                        console.log(res)
-
                         res.data.forEach(prd => {
                             this.personnelchange.unshift(PersonnelChangeModel.fromJS(prd))
                         })

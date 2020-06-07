@@ -18,11 +18,7 @@
             </el-input>
         </el-col>
         <el-col :span="8" :offset="8" class="mar">
-            <el-input
-                    placeholder="生日"
-                    v-model="bir"
-                    clearable>
-            </el-input>
+            <el-date-picker type="date" value-format="yyyy-MM-dd" placeholder="选择日期" v-model="bir" style="width: 100%;"></el-date-picker>
         </el-col>
         <el-col :span="8" :offset="8" class="mar">
 <!--            下拉框均为可去除-->
@@ -98,10 +94,15 @@
                     email:this.email,
                 });
                 api.addStaff(staff).then(res=>{
+                    console.log(res)
                     if(res.data === true){
-                        window.alert("添加员工成功");
+                        this.$message({
+                            message: '添加员工成功',
+                            type: 'success'
+                        });
+                        this.$router.push('index/search')
                     }else {
-                        window.alert("添加员工失败");
+                        this.$message.error('添加员工失败');
                     }
                 })
             },
