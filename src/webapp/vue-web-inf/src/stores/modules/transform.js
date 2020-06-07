@@ -11,7 +11,8 @@ const state = {
     departmentType: [],
     eduLevelType: [],
     jobType: [],
-    personnalType: []
+    personnalType: [],
+    nowEdit:null,
 }
 
 const mutations = {
@@ -44,6 +45,7 @@ const mutations = {
             })
             return 0;
         })
+        setTimeout(null,500)
     },
     //staffName,departmentID,jobID
     GET_STAFF:(state,inf)=>{
@@ -67,6 +69,7 @@ const mutations = {
                 state.showStaff.push(newStaff);
                 return 0;
             })
+
             return 0;
         })
     },
@@ -84,7 +87,20 @@ const mutations = {
                 return 0;
             }
         })
-        api.deleteStaff(staffID);
+        api.deleteStaff(staffID).then(res=>{
+            if(res.data === true){
+                this.$message({
+                    message: '员工'+staffID+'已删除',
+                    type: 'success'
+                })
+            } else {
+                this.$message.error('删除失败')
+            }
+        });
+    },
+
+    SET_NOW_EDIT: (state, staffID) =>{
+        state.nowEdit= staffID;
     }
 
 }
@@ -100,6 +116,10 @@ const actions = {
 
     deleteStaff({commit},staffID){
         commit('DELETE_STAFF',staffID)
+    },
+
+    setNowEdit({commit}, staffID){
+        commit('SET_NOW_EDIT', staffID)
     }
 }
 

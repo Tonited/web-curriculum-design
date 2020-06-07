@@ -8,7 +8,8 @@ import HelloWorld from "@/components/HelloWorld/index";
 import Login from "@/layout/Login";
 import Change from  "@/components/Change/index";
 import Query from "@/layout/Query/index";
-import Add from "@//components/Add/index";
+import Add from "@/components/Add/index";
+import Edit from '@/layout/Edit'
 // import Personnal from "@/layout/Personnal";
 
 
@@ -41,6 +42,9 @@ export const constantRoutes = [
             },{
                 path: 'logout',
                 component: HelloWorld
+            },{
+                path: 'edit',
+                component: Edit
             }
         ]
     }
