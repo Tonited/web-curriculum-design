@@ -1,10 +1,18 @@
 <template>
-    <el-container>
+    <el-container >
         <el-aside>
             <SideBar/>
         </el-aside>
         <el-main>
-            <router-view/>
+            <div v-if="this.$store.state.transform.nowStaff === null">
+                <el-alert
+                        title="请先登录"
+                        type="error"
+                        description="未登陆无法访问"
+                        show-icon>
+                </el-alert>
+            </div>
+            <router-view  v-if="this.$store.state.transform.nowStaff !== null"/>
         </el-main>
     </el-container>
 </template>

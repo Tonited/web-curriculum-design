@@ -1,5 +1,9 @@
 <template>
     <el-row class="tac">
+        <el-col style="text-align: center">
+            <el-avatar :size="150" icon="el-icon-user-solid" src="https://tonited.gitee.io/blog/medias/avatar.jpg"/>
+            <h2>{{this.$store.state.transform.nowStaff === null ? '未登录' : this.$store.state.transform.nowStaff.name}}</h2>
+        </el-col>
         <el-col>
             <el-menu
                     @select="selectMe"
@@ -32,12 +36,15 @@
 <script>
     export default {
         name: "SideBar",
-        created: function() {
-            this.$router.push('/index/search')
-        },
+
         methods:{
             selectMe:function(index){
-                this.$router.push('/index/'+index)
+                if(index==="logout"){
+                    this.$store.dispatch('transform/logout');
+                    this.$router.push('/')
+                }else {
+                    this.$router.push('/index/' + index)
+                }
             },
 
         }
